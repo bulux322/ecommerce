@@ -51,7 +51,7 @@
                                 <div class="col-lg-2">
                                     <div class="details-image-vertical black-slide rounded">
                                         <div>
-                                            <img src="{{$product->image}}"
+                                            <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                                 class="img-fluid blur-up lazyload" alt="{{$product->name}}">
                                         </div>
                                         @if ($product->images)
@@ -60,7 +60,7 @@
                                         @endphp
                                         @foreach ($images as $image)
                                             <div>
-                                                <img src="{{$product->image}}"
+                                                <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                                     class="img-fluid blur-up lazyload" alt="">
                                             </div>
                                         @endforeach
@@ -70,7 +70,7 @@
                                 <div class="col-lg-10">
                                     <div class="details-image-1 ratio_asos">
                                         <div>
-                                            <img src="{{$product->image}}"
+                                            <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                             class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="{{$product->name}}">
                                         </div>
                                         @if ($product->images)
@@ -80,7 +80,7 @@
                                         @foreach ($images as $image)
                                             <div>
                                                 <div>
-                                                    <img src="{{$product->image}}"
+                                                    <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                                         class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
                                                 </div>
                                             </div>
@@ -133,7 +133,7 @@
                                         <ul class="image-section">
                                             <li>
                                                 <a href="javascript:void(0)">
-                                                    <img src="{{$product->image}}"
+                                                    <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                                         class="img-fluid blur-up lazyload" alt="{{$product->name}}">
                                                 </a>
                                             </li>

@@ -6,7 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\admin\AdminProductController;
 use App\Http\Controllers\admin\AdminCategoriesController;
 use App\Http\Controllers\admin\AdminAddCategoryController;
 
@@ -40,4 +40,11 @@ Route::middleware('auth','auth.admin')->group(function(){
     Route::get('/admin/categories',[AdminCategoriesController::class,'index'])->name('admin.categories');
     Route::get('/admin/categories/add',[AdminAddCategoryController::class,'render'])->name('admin.category.add');
     Route::post('/admin/categories/storeCategory', [AdminAddCategoryController::class, 'storeCategory'])->name('admin.categories.storeCategory');
+    Route::get('/admin/categories/{id}/edit', [AdminCategoriesController::class, 'edit'])->name('admin.categories.edit');
+    Route::put('/admin/categories/{id}', [AdminCategoriesController::class, 'update'])->name('admin.categories.update');
+    Route::delete('/admin/categories/{id}', [AdminCategoriesController::class, 'destroy'])->name('admin.categories.destroy');
+    Route::get('/admin/products',[AdminProductController::class,'index'])->name('admin.product');
+    Route::get('/admin/products/add',[AdminProductController::class,'create'])->name('admin.product.add');
+    Route::post('/admin/products/store', [AdminProductController::class,'store'])->name('admin.product.store');
+    Route::delete('/admin/products/{id}', [AdminProductController::class, 'destroy'])->name('admin.product.destroy');
 });

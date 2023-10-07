@@ -3,40 +3,26 @@
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row">
-        <div class="col-lg-12 grid-margin stretch-card">
+        <div class="col-lg-6 grid-margin stretch-card">
           <div class="card">
-            {{-- <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">All Category</div>
-                    <div class="col-md-6"></div>
-                </div>
-            </div> --}}
             <div class="card-body">
                 @if (Session::has('message'))
                     <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                 @endif
               <h4 class="card-title">All Category</h4>
-              <p class="card-description">
-                <a href="{{route('admin.categories')}}" class="btn btn-primary me-2">See Category</a>
-              </p>
               <div class="table-responsive">
-                <form method="POST" action="{{ route('admin.categories.storeCategory') }}">
+                <form method="POST" action="{{ route('admin.categories.update', ['id' => $category->id]) }}">
                     @csrf
-                    <div class="mb-3 mt-3">
+                    @method('PUT')
+                    <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter category name">
-                        @error('name')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
+                        <input type="text" name="name" class="form-control" value="{{ $category->name }}">
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
-                        <input type="text" name="slug" class="form-control" placeholder="Enter category slug">
-                        @error('slug')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
+                        <input type="text" name="slug" class="form-control" value="{{ $category->slug }}">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update Category</button>
                     <a href="{{ route('admin.categories') }}" class="btn btn-secondary">Batal</a>
                 </form>
               </div>

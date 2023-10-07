@@ -174,12 +174,12 @@
             }
         </style>
         <div class="row g-sm-4 g-3">
-
+            @foreach ($products as $product)
             <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">
                     <div class="img-wrapper">
-                        <a href="product/details.html">
-                            <img src="assets/images/fashion/product/front/10.jpg"
+                        <a href="{{route('shop.product.details',['slug'=>$product->slug])}}">
+                            <img src="{{ asset('assets/images')}}/{{$product->image}}"
                                 class="w-100 bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="circle-shape"></div>
@@ -231,14 +231,15 @@
                                     </ul>
                                 </div>
                             </div>
-                            <p class="font-light mb-sm-2 mb-0">Dolores Et</p>
-                            <a href="product/details.html" class="font-default">
-                                <h5>Dolorem Libero Tempore Voluptatem</h5>
+                            <p class="font-light mb-sm-2 mb-0">{{$product->category->name}}</p>
+                            <a href="{{route('shop.product.details',['slug'=>$product->slug])}}" class="font-default">
+                                <h5>{{$product->name}}</h5>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
             {{-- <div class="col-xl-2 col-lg-2 col-6">
                 <div class="product-box">

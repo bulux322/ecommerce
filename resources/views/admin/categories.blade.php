@@ -3,7 +3,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row">
-        <div class="col-lg-6 grid-margin stretch-card">
+        <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">All Category</h4>
@@ -29,7 +29,14 @@
                         <td>{{++$i}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->slug}}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{ route('admin.categories.edit', ['id' => $category->id]) }}" class="btn btn-primary">Edit</a>
+                            <form action="{{ route('admin.categories.destroy', ['id' => $category->id]) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>

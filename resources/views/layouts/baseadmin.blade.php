@@ -23,8 +23,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('admins/images/logo.svg')}}" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('admins/images/logo-mini.svg')}}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="{{route('app.index')}}"><img src="{{asset('admins/images/logo.svg')}}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="{{route('app.index')}}"><img src="{{asset('admins/images/logo-mini.svg')}}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -171,10 +171,28 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.categories')}}">
-              <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Category</span>
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Produk</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="{{route('admin.product')}}">Kumpulan Produk</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Kategori</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="{{route('admin.categories')}}">Kumpulan Kategori</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -184,8 +202,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/ui-features/buttons.html')}}">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/ui-features/typography.html')}}">Typography</a></li>
               </ul>
             </div>
           </li>
