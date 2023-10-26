@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="MkRqEzTGuoSx6LqJUm0OAKxSgNUYt26wTT7RMUZY">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="{{asset('assets/images/favicon.ico')}}">
-    <link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon">
-    <link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{asset('assets/images/favicon.png')}}">
+    <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
     <meta name="theme-color" content="#e87316">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Surfside Media">
+    <meta name="apple-mobile-web-app-title" content="Rockrack Overland">
     <meta name="msapplication-TileImage" content="{{asset('assets/images/favicon.ico')}}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Surfside Media">
-    <meta name="keywords" content="Surfside Media">
-    <meta name="author" content="Surfside Media">
+    <meta name="description" content="Rockrack Overland">
+    <meta name="keywords" content="Rockrack Overland">
+    <meta name="author" content="Rockrack Overland">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <title>RockRack Overland</title>
+    <title>Rockrack Overland</title>
 
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/vendors/ion.rangeSlider.min.css')}}">
@@ -34,17 +34,11 @@
     <link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo4.css')}}">
     <style>
         .h-logo {
-            max-width: 185px !important;
+            max-width: 70px !important;
         }
 
         .f-logo {
-            max-width: 220px !important;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .h-logo {
-                max-width: 110px !important;
-            }
+            max-width: 70px !important;
         }
     </style>
     <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
@@ -84,7 +78,7 @@
 
         @media (max-width:600px) {
             .h-logo {
-                max-width: 150px !important;
+                max-width: 50px !important;
             }
 
             i.sidebar-bar {
@@ -256,7 +250,7 @@
                 </a>
             </li>
             <li>
-                <a href="user-dashboard.php">
+                <a href="{{route('user.index')}}">
                     <i data-feather="user"></i>
                     <span>Account</span>
                 </a>

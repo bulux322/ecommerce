@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @section('content')
-<section class="pt-0 poster-section">
+{{-- <section class="pt-0 poster-section">
     <div class="poster-image slider-for custome-arrow classic-arrow">
         <div>
             <img src="assets/images/furniture-images/poster/1.png" class="img-fluid blur-up lazyload" alt="">
@@ -64,7 +64,7 @@
             <h6>Twitter</h6>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- banner section start -->
 {{-- <section class="ratio2_1 banner-style-2">
     <div class="container">
@@ -172,6 +172,10 @@
                     text-align: right !important;
                 }
             }
+            .rating {
+                display: flex;
+                margin-bottom: -4px;
+            }
         </style>
         <div class="row g-sm-4 g-3">
             @foreach ($products as $product)
@@ -210,28 +214,28 @@
                     <div class="product-style-3 product-style-chair">
                         <div class="product-title d-block mb-0">
                             <div class="r-price">
-                                <div class="theme-color">$5</div>
-                                <div class="main-price">
-                                    <ul class="rating mb-1 mt-0">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <div class="theme-color"><h3>Rp.{{ number_format($product->regular_price, 0, ',', '.') }}</h3></div>
                             </div>
-                            <p class="font-light mb-sm-2 mb-0">{{$product->category->name}}</p>
+                            <div class="main-price">
+                                <ul class="rating mb-1 mt-0">
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star theme-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{-- <p class="font-light mb-sm-2 mb-0">{{$product->category->name}}</p> --}}
                             <a href="{{route('shop.product.details',['slug'=>$product->slug])}}" class="font-default">
                                 <h5>{{$product->name}}</h5>
                             </a>

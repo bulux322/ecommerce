@@ -513,7 +513,7 @@
                                         <span class="font-light">{{$product->category->name}}</span>
                                         <p class="font-light">{{$product->description}}</p>
                                     </div>
-                                    <h3 class="theme-color">Rp.{{$product->regular_price}}</h3>
+                                    <h3 class="theme-color">Rp.{{ number_format($product->regular_price, 0, ',', '.') }}</h3>
                                     <button class="btn listing-content">Add To Cart</button>
                                 </div>
                             </div>

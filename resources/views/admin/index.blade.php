@@ -10,11 +10,6 @@
                 <h2>Welcome back,</h2>
                 <p class="mb-md-0">Your analytics dashboard template.</p>
               </div>
-              <div class="d-flex">
-                <i class="mdi mdi-home text-muted hover-cursor"></i>
-                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
-                <p class="text-primary mb-0 hover-cursor">Analytics</p>
-              </div>
             </div>
             <div class="d-flex justify-content-between align-items-end flex-wrap">
               <button type="button" class="btn btn-light bg-white btn-icon me-3 d-none d-md-block ">
@@ -211,7 +206,7 @@
           <div class="card">
             <div class="card-body">
               <p class="card-title">Total sales</p>
-              <h1>$ 28835</h1>
+              <h1>Rp.5.000.000-,</h1>
               <h4>Gross sales over the years</h4>
               <p class="text-muted">Today, many people rely on computers to do homework, work, and create or store useful information. Therefore, it is important </p>
               <div id="total-sales-chart-legend"></div>
@@ -229,81 +224,43 @@
                 <table id="recent-purchases-listing" class="table">
                   <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Status report</th>
-                        <th>Office</th>
-                        <th>Price</th>
-                        <th>Date</th>
-                        <th>Gross amount</th>
+                        <th>OrderId</th>
+                        <th>Sub Total</th>
+                        <th>Tax</th>
+                        <th>Total</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Zipcode</th>
+                        <th>Car Type</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @php
+                        $i = ($orders->currentPage() - 1) * $orders->perPage();
+                    @endphp
+                    @foreach ($orders as $order)
                     <tr>
-                        <td>Jeremy Ortega</td>
-                        <td>Levelled up</td>
-                        <td>Catalinaborough</td>
-                        <td>$790</td>
-                        <td>06 Jan 2018</td>
-                        <td>$2274253</td>
+                        <td>{{$order->id}}</td>
+                        <td>Rp.{{$order->subtotal}}</td>
+                        <td>Rp.{{$order->tax}}</td>
+                        <td>Rp.{{$order->total}}</td>
+                        <td>{{$order->firstname}}</td>
+                        <td>{{$order->lastname}}</td>
+                        <td>{{$order->phone}}</td>
+                        <td>{{$order->email}}</td>
+                        <td>{{$order->zipcode}}</td>
+                        <td>{{$order->cartype}}</td>
+                        <td>{{$order->created_at}}</td>
+                        <td>{{$order->status}}</td>
                     </tr>
-                    <tr>
-                        <td>Alvin Fisher</td>
-                        <td>Ui design completed</td>
-                        <td>East Mayra</td>
-                        <td>$23230</td>
-                        <td>18 Jul 2018</td>
-                        <td>$83127</td>
-                    </tr>
-                    <tr>
-                        <td>Emily Cunningham</td>
-                        <td>support</td>
-                        <td>Makennaton</td>
-                        <td>$939</td>
-                        <td>16 Jul 2018</td>
-                        <td>$29177</td>
-                    </tr>
-                    <tr>
-                        <td>Minnie Farmer</td>
-                        <td>support</td>
-                        <td>Agustinaborough</td>
-                        <td>$30</td>
-                        <td>30 Apr 2018</td>
-                        <td>$44617</td>
-                    </tr>
-                    <tr>
-                        <td>Betty Hunt</td>
-                        <td>Ui design not completed</td>
-                        <td>Lake Sandrafort</td>
-                        <td>$571</td>
-                        <td>25 Jun 2018</td>
-                        <td>$78952</td>
-                    </tr>
-                    <tr>
-                        <td>Myrtie Lambert</td>
-                        <td>Ui design completed</td>
-                        <td>Cassinbury</td>
-                        <td>$36</td>
-                        <td>05 Nov 2018</td>
-                        <td>$36422</td>
-                    </tr>
-                    <tr>
-                        <td>Jacob Kennedy</td>
-                        <td>New project</td>
-                        <td>Cletaborough</td>
-                        <td>$314</td>
-                        <td>12 Jul 2018</td>
-                        <td>$34167</td>
-                    </tr>
-                    <tr>
-                        <td>Ernest Wade</td>
-                        <td>Levelled up</td>
-                        <td>West Fidelmouth</td>
-                        <td>$484</td>
-                        <td>08 Sep 2018</td>
-                        <td>$50862</td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
+                {{$orders->links()}}
               </div>
             </div>
           </div>

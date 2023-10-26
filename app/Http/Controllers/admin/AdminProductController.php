@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class AdminProductController extends Controller
 {
@@ -112,5 +113,79 @@ class AdminProductController extends Controller
 
         // Redirect kembali ke halaman daftar produk dengan pesan sukses
         return redirect()->route('admin.product')->with('success', 'Product deleted successfully');
+    }
+    public function edit($id)
+    {
+        // Cari produk berdasarkan ID
+        $product = Product::findOrFail($id);
+
+        // Ambil kategori-kategori yang akan ditampilkan di form edit produk
+        $categories = Category::all();
+
+        // Tampilkan halaman edit produk dengan data produk yang akan diedit dan kategori-kategori
+        return view('admin.editproduct', compact('product', 'categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Validasi data yang dikirim dari form edit
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'short_description' => 'required|string',
+            'description' => 'required|string',
+            'regular_price' => 'required|numeric',
+            'sale_price' => 'nullable|numeric',
+            'sku' => 'required|string',
+            'stock_status' => 'required|in:instock,outofstock',
+            'featured' => 'boolean',
+            'quantity' => 'required|integer',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Sesuaikan dengan jenis gambar yang diizinkan dan batas ukuran yang diinginkan
+            'category_id' => 'required|exists:categories,id', // Pastikan kategori yang dipilih ada dalam database
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.product.edit', $id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // Cari produk berdasarkan ID
+        $product = Product::findOrFail($id);
+
+        // Handle upload gambar jika ada
+        if ($request->hasFile('image')) {
+            $uploadedImage = $request->file('image');
+
+            // Mendapatkan nama asli berkas
+            $imageName = Carbon::now()->timestamp . '.' . $uploadedImage->extension();
+
+            // Menyimpan berkas dengan nama yang sesuai
+            $imagePath = $uploadedImage->storeAs('productsIMG', $imageName);
+
+            // Hapus berkas gambar lama jika ada
+            if (!is_null($product->image)) {
+                File::delete(public_path('productsIMG/' . $product->image));
+            }
+
+            // Update path gambar
+            $product->image = $imagePath;
+        }
+
+        // Update data produk
+        $product->name = $request->input('name');
+        $product->slug = Str::slug($request->input('slug'));
+        $product->short_description = $request->input('short_description');
+        $product->description = $request->input('description');
+        $product->regular_price = $request->input('regular_price');
+        $product->sale_price = $request->input('sale_price');
+        $product->sku = $request->input('sku');
+        $product->stock_status = $request->input('stock_status');
+        $product->featured = $request->input('featured', 0);
+        $product->quantity = $request->input('quantity');
+        $product->category_id = $request->input('category_id');
+        $product->save();
+
+        // Redirect ke halaman yang sesuai dengan notifikasi sukses atau pesan sukses lainnya
+        return redirect()->route('admin.product')->with('success', 'Product updated successfully');
     }
 }

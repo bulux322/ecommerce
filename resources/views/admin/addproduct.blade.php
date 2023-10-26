@@ -36,7 +36,7 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="description" class="form-label">Description</label>
-                        <input type="text" name="description" class="form-control" placeholder="Enter product description">
+                        <textarea name="description" class="form-control" id="description" placeholder="Enter product description"></textarea>
                         @error('description')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
@@ -117,26 +117,21 @@
         </div>
       </div>
     </div>
-    <!-- content-wrapper ends -->
-    <!-- partial:../../partials/_footer.html -->
-    <footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
-    </div>
-    </footer>
-    <!-- partial -->
-  </div>
+</div>
 @endsection
+@push('script')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const nameInput = document.querySelector('input[name="name"]');
-        const slugInput = document.querySelector('input[name="slug"]');
-
-        nameInput.addEventListener('keyup', function () {
-            const nameValue = nameInput.value.trim();
-            const slugValue = nameValue.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
-            slugInput.value = slugValue;
-        });
+    tinymce.init({
+      selector: '#description',
+      plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+      ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
     });
-</script>
+  </script>
+@endpush

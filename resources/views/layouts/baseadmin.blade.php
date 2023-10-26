@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('admins/css/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{asset('admins/images/favicon.png')}}" />
+  <link rel="shortcut icon" href="{{asset('admins/images/favicon.png')}}"/>
 </head>
 <body>
   <div class="container-scroller">
@@ -166,91 +166,26 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.index')}}">
-              <i class="mdi mdi-home menu-icon"></i>
+              <i class="mdi mdi-view-dashboard menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Produk</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{route('admin.product')}}">Kumpulan Produk</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Kategori</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{route('admin.categories')}}">Kumpulan Kategori</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/ui-features/buttons.html')}}">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/ui-features/typography.html')}}">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{asset('admins/pages/forms/basic_elements.html')}}">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+            <a class="nav-link" href="{{route('admin.product')}}">
+              <i class=" mdi mdi-shopping menu-icon"></i>
+              <span class="menu-title">Kumpulan Produk</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{asset('admins/pages/charts/chartjs.html')}}">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Charts</span>
+            <a class="nav-link" href="{{route('admin.categories')}}">
+              <i class="mdi mdi-package menu-icon"></i>
+              <span class="menu-title">Kumpulan Kategori</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{asset('admins/pages/tables/basic-table.html')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{asset('admins/pages/icons/mdi.html')}}">
-              <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/samples/login.html')}}"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/samples/login-2.html')}}"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/samples/register.html')}}"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/samples/register-2.html')}}"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{asset('admins/pages/samples/lock-screen.html')}}"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+            <a class="nav-link" href="{{route('admin.orders')}}">
+              <i class="mdi mdi-cart menu-icon"></i>
+              <span class="menu-title">Kumpulan Order</span>
             </a>
           </li>
         </ul>
@@ -283,7 +218,76 @@
   <script src="{{asset('admins/js/dataTables.bootstrap4.js')}}"></script>
   <!-- End custom js for this page-->
   <script src="{{asset('js/jquery.cookie.js')}}" type="text/javascript"></script>
+  <script src="https://cdn.tiny.cloud/1/bv35vugjg7zgxa70u30umkldf3p3wk4zqkzavv58r8g7fpbu/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  @stack('script')
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Referensi elemen-elemen HTML
+    var searchInput = document.getElementById("datatable-input");
+    var selectDropdown = document.getElementById("datatable-selector");
+    var table = document.getElementById("recent-purchases-listing");
 
+    // Event listener untuk input pencarian
+    searchInput.addEventListener("input", function() {
+        var searchText = this.value.toLowerCase();
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+            var row = rows[i];
+            var rowData = row.textContent.toLowerCase();
+
+            if (rowData.includes(searchText)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    });
+
+    // Event listener untuk select dropdown
+    selectDropdown.addEventListener("change", function() {
+        var selectedValue = this.value;
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+            var row = rows[i];
+
+            // Mengatur tampilan baris berdasarkan nomor urut
+            if (i <= selectedValue) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    });
+
+    document.getElementById('date-filter').addEventListener('change', function() {
+        var selectedOption = this.value;
+        // Kirim permintaan AJAX ke server dengan opsi yang dipilih, dan perbarui tampilan data.
+    });
+
+    function fetchFilteredData(selectedOption) {
+        fetch('/filter-data/' + selectedOption)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('filtered-data').innerHTML = data;
+            });
+    }
+    var selectedOption = document.getElementById('date-filter').value;
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const nameInput = document.querySelector('input[name="name"]');
+        const slugInput = document.querySelector('input[name="slug"]');
+
+        nameInput.addEventListener('keyup', function () {
+            const nameValue = nameInput.value.trim();
+            const slugValue = nameValue.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+            slugInput.value = slugValue;
+        });
+    });
+</script>
+@stack('script')
 </html>
 

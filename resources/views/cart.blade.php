@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="table-responsive">
-                    <table class="table cart-table">
+                    <table class="table table-part">
                         <thead>
                             <tr class="main-heading">
                                 <th scope="col">image</th>
@@ -55,7 +55,7 @@
                             <tr>
                                 <td>
                                     <a href="{{route('shop.product.details',['slug'=>$item->model->slug])}}">
-                                        <img src="{{asset('assets/images/fashion/product/front')}}/{{$item->model->image}}"
+                                        <img src="{{asset('assets/images')}}/{{$item->model->image}}"
                                             class="blur-up lazyloaded" alt="{{$item->model->name}}">
                                     </a>
                                 </td>
@@ -68,8 +68,8 @@
                                 <td>
                                     <div class="qty-box">
                                         <div class="input-group">
-                                            <input type="number" name="quantity" data-rowid="{{$item->rowId}}"
-                                            onchange="updateQuantity(this)" class="form-control input-number" value="{{$item->qty}}">
+                                            <input type="number" name="quantity" data-rowid="{{$item->rowId}}" onchange="updateQuantity(this)"
+                                                class="form-control input-number" value="{{$item->qty}}">
                                         </div>
                                     </div>
                                 </td>
@@ -82,28 +82,6 @@
                                     </a>
                                 </td>
                             </tr>
-                            <!-- Mobile View Content -->
-                            {{-- <tr class="mobile-cart-content">
-                                <td colspan="6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="qty-box">
-                                                <div class="input-group">
-                                                    <input type="number" name="quantity"
-                                                        data-rowid="ba02b0dddb000b25445168300c65386d"
-                                                        class="form-control input-number" value="{{$item->qty}}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h2>Rp.{{$item->price}}</h2>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr> --}}
                             @endforeach
                         </tbody>
                     </table>
@@ -120,7 +98,7 @@
                     </div>
                     <div class="col-sm-5 col-7">
                         <div class="left-side-button float-start">
-                            <a href="../shop.html" class="btn btn-solid-default btn fw-bold mb-0 ms-0">
+                            <a href="{{route('shop.index')}}" class="btn btn-solid-default btn fw-bold mb-0 ms-0">
                                 <i class="fas fa-arrow-left"></i> Continue Shopping</a>
                         </div>
                     </div>
@@ -128,7 +106,7 @@
             </div>
             <div class="cart-checkout-section">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-sm-6">
+                    {{-- <div class="col-lg-4 col-sm-6">
                         <div class="promo-section">
                             <form class="row g-3">
                                 <div class="col-7">
@@ -139,15 +117,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6 ">
-                        <div class="checkout-button">
-                            <a href="checkout" class="btn btn-solid-default btn fw-bold">
-                                Check Out <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-
+                    </div> --}}
                     <div class="col-lg-4">
                         <div class="cart-box">
                             <div class="cart-box-details">
@@ -160,7 +130,7 @@
                                         <h6>Total <span>Rp.{{Cart::instance('cart')->total()}}</span></h6>
                                     </div>
                                     <div class="bottom-details">
-                                        <a href="checkout">Process Checkout</a>
+                                        <a href="{{route('checkout.index')}}">Process Checkout</a>
                                     </div>
                                 </div>
                             </div>

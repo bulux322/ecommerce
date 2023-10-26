@@ -6,9 +6,9 @@
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">All Category</h4>
+              <h4 class="card-title">Semua Category</h4>
               <p class="card-description">
-                <a href="{{route('admin.category.add')}}" class="btn btn-primary me-2">Add Category</a>
+                <a href="{{route('admin.category.add')}}" class="btn btn-outline-primary me-2">Tambah Category</a>
               </p>
               <div class="table-responsive">
                 <table class="table table-striped">
@@ -30,11 +30,11 @@
                         <td>{{$category->name}}</td>
                         <td>{{$category->slug}}</td>
                         <td>
-                            <a href="{{ route('admin.categories.edit', ['id' => $category->id]) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('admin.categories.edit', ['id' => $category->id]) }}" class="btn btn-outline-primary">Edit</a>
                             <form action="{{ route('admin.categories.destroy', ['id' => $category->id]) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                <button type="submit" class="btn btn-outline-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>
@@ -48,14 +48,5 @@
         </div>
       </div>
     </div>
-    <!-- content-wrapper ends -->
-    <!-- partial:../../partials/_footer.html -->
-    <footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
-    </div>
-    </footer>
-    <!-- partial -->
   </div>
 @endsection

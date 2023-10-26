@@ -3,7 +3,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row">
-        <div class="col-lg-6 grid-margin stretch-card">
+        <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
                 @if (Session::has('message'))
@@ -22,8 +22,8 @@
                         <label for="slug" class="form-label">Slug</label>
                         <input type="text" name="slug" class="form-control" value="{{ $category->slug }}">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Category</button>
-                    <a href="{{ route('admin.categories') }}" class="btn btn-secondary">Batal</a>
+                    <button type="submit" class="btn btn-outline-primary">Update Category</button>
+                    <a href="{{ route('admin.categories') }}" class="btn btn-outline-secondary">Batal</a>
                 </form>
               </div>
             </div>
@@ -42,15 +42,6 @@
     <!-- partial -->
   </div>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const nameInput = document.querySelector('input[name="name"]');
-        const slugInput = document.querySelector('input[name="slug"]');
+@push('script')
 
-        nameInput.addEventListener('keyup', function () {
-            const nameValue = nameInput.value.trim();
-            const slugValue = nameValue.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
-            slugInput.value = slugValue;
-        });
-    });
-</script>
+@endpush

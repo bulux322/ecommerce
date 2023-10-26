@@ -39,6 +39,7 @@
         </div>
     </div>
 </section>
+
 <!-- Shop Section start -->
 <section>
     <div class="container">
@@ -120,12 +121,7 @@
                                 </div>
 
                                 <h3 class="price-detail">
-                                    @if ($product->sale_price)
-                                        Rp.{{$product->sale_price}}
-                                        <del>Rp.{{$product->regular_price}}</del><span>
-                                        {{round((($product->regular_price-$product->sale_price)/$product->regular_price)*100)}}
-                                        % off</span>
-                                    @endif
+                                    Rp.{{ number_format($product->regular_price, 0, ',', '.') }}
                                 </h3>
                                 <div class="color-image">
                                     <div class="image-select">
@@ -315,9 +311,9 @@
                     </nav>
 
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="desc">
+                        <div class="tab-pane fade show active" id="description">
                             <div class="shipping-chart">
-                                {{$product->description}}
+                                {!!$product->description!!}
                             </div>
                         </div>
 
@@ -791,7 +787,7 @@
 </section>
 <!-- Shop Section end -->
 <!-- product section start -->
-<section class="ratio_asos section-b-space overflow-hidden">
+{{-- <section class="ratio_asos section-b-space overflow-hidden">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -881,6 +877,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- product section end -->
 @endsection
