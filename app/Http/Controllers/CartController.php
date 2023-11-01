@@ -25,7 +25,7 @@ class CartController extends Controller
             $price = $product->regular_price;
         }
 
-        Cart::instance('cart')->add($product->id, $product->name, $quantity, $price)->associate('App\Models\Product');
+        Cart::instance('cart')->add($product->id, $product->name, $request->quantity, $price)->associate('App\Models\Product');
 
         return redirect()->back()->with('message', 'Success Add Item!');
     }

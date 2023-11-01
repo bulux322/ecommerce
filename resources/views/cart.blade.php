@@ -77,7 +77,7 @@
                                     <h2 class="td-color">Rp.{{$item->subtotal()}}</h2>
                                 </td>
                                 <td>
-                                    <a href="javascript:void(0)" onclick="removeItemFromCart('{{$item->itemId}}')">
+                                    <a href="javascript:void(0)" onclick="removeItemFromCart('{{$item->rowId}}')">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
