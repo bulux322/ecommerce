@@ -2,9 +2,10 @@
 @push('styles')
     <link id="color-link" rel="stylesheet" type="text/css" href="{{asset('assets/css/demo2.css')}}">
     <style>
-    .product-box .product-details h5 {
-	width: 100%;
-}
+        .product-box .product-details h5
+        {
+            width: 100%;
+        }
     </style>
 @endpush
 @section('content')
@@ -786,6 +787,7 @@
     </div>
 </section>
 <!-- Shop Section end -->
+
 <!-- product section start -->
 {{-- <section class="ratio_asos section-b-space overflow-hidden">
     <div class="container">

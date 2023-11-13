@@ -188,6 +188,18 @@
               <span class="menu-title">Kumpulan Order</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.blogcategories.index')}}">
+              <i class="mdi mdi-cart menu-icon"></i>
+              <span class="menu-title">Blog Category</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.blogposts.index')}}">
+              <i class="mdi mdi-cart menu-icon"></i>
+              <span class="menu-title">Blog Post</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -219,6 +231,7 @@
   <!-- End custom js for this page-->
   <script src="{{asset('js/jquery.cookie.js')}}" type="text/javascript"></script>
   <script src="https://cdn.tiny.cloud/1/bv35vugjg7zgxa70u30umkldf3p3wk4zqkzavv58r8g7fpbu/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
   @stack('script')
 </body>
 <script>
@@ -287,6 +300,26 @@
             slugInput.value = slugValue;
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const nameInput = document.querySelector('input[name="title"]');
+        const slugInput = document.querySelector('input[name="slug"]');
+
+        nameInput.addEventListener('keyup', function () {
+            const nameValue = nameInput.value.trim();
+            const slugValue = nameValue.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+            slugInput.value = slugValue;
+            });
+        });
+
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                    console.log( editor );
+            })
+            .catch( error => {
+                    console.error( error );
+            });
 </script>
 @stack('script')
 </html>

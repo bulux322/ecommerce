@@ -130,11 +130,11 @@
                                             </li>
                                             <li><a href="{{route('app.index')}}" class="nav-link menu-title">Home</a></li>
                                             <li><a href="{{route('shop.index')}}" class="nav-link menu-title">Shop</a></li>
-                                            <li><a href="{{route('cart.index')}}" class="nav-link menu-title">Cart</a></li>
-                                            <li><a href="about-us.html" class="nav-link menu-title">About Us</a></li>
-                                            <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a>
+                                            {{-- <li><a href="{{route('cart.index')}}" class="nav-link menu-title">Cart</a></li> --}}
+                                            <li><a href="{{route('about_us')}}" class="nav-link menu-title">About Us</a></li>
+                                            <li><a href="{{route('contact')}}" class="nav-link menu-title">Contact Us</a>
                                             </li>
-                                            <li><a href="blog.html" class="nav-link menu-title">Blog</a></li>
+                                            <li><a href="{{route('user.blogpost')}}" class="nav-link menu-title">Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                             <i data-feather="search"></i>
                                         </div>
                                     </li>
-                                    <li class="onhover-dropdown wislist-dropdown">
+                                    {{-- <li class="onhover-dropdown wislist-dropdown">
                                         <div class="cart-media">
                                             <a href="wishlist/list.html">
                                                 <i data-feather="heart"></i>
@@ -155,7 +155,7 @@
                                                 </span>
                                             </a>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li class="onhover-dropdown wislist-dropdown">
                                         <div class="cart-media">
                                             <a href="{{route('cart.index')}}">
@@ -275,14 +275,14 @@
                             </div>
                             <ul class="contact-lists" style="clear:both;">
                                 <li>
-                                    <span><b>phone:</b> <span class="font-light"> +1 0000000000</span></span>
+                                    <span><b>phone:</b> <span class="font-light"> +62 81900000</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Address:</b><span class="font-light"> NIT, Faridabad, Haryana,
-                                            India</span></span>
+                                    <span><b>Address:</b><span class="font-light"> Bandung,
+                                            Indonesia</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> info@rockrackoverland.id</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -290,7 +290,7 @@
                     <div class="col-lg-2 col-md-4 col-sm-6">
                         <div class="footer-links">
                             <div class="footer-title">
-                                <h3>About us</h3>
+                                <h3>Navigation</h3>
                             </div>
                             <div class="footer-content">
                                 <ul>
@@ -415,7 +415,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <p class="mb-0 font-dark">© 2023, Surfside Media.</p>
+                        <p class="mb-0 font-dark">© 2023, Rockrack Overland.</p>
                     </div>
                 </div>
             </div>
@@ -607,6 +607,7 @@
     <script src="{{asset('assets/js/bootstrap/bootstrap-notify.min.js')}}"></script>
     <script src="{{asset('assets/js/theme-setting.js')}}"></script>
     <script src="{{asset('assets/js/script.js')}}"></script>
+
     <script>
         $(function () {
             $('[data-bs-toggle="tooltip"]').tooltip()

@@ -12,9 +12,6 @@
                 </div>
             </div> --}}
             <div class="card-body">
-                @if (Session::has('message'))
-                    <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-                @endif
               <h4 class="card-title">All Category</h4>
               <p class="card-description">
                 <a href="{{route('admin.categories')}}" class="btn btn-primary me-2">See Category</a>
@@ -47,24 +44,10 @@
     </div>
     <!-- content-wrapper ends -->
     <!-- partial:../../partials/_footer.html -->
-    <footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-      <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
-    </div>
-    </footer>
+
     <!-- partial -->
   </div>
 @endsection
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const nameInput = document.querySelector('input[name="name"]');
-        const slugInput = document.querySelector('input[name="slug"]');
+@push('script')
 
-        nameInput.addEventListener('keyup', function () {
-            const nameValue = nameInput.value.trim();
-            const slugValue = nameValue.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
-            slugInput.value = slugValue;
-        });
-    });
-</script>
+@endpush
