@@ -9,7 +9,7 @@
                 @if (Session::has('message'))
                     <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                 @endif
-              <h4 class="card-title">Tambah Order Manual</h4>
+              <h4 class="card-title">Tambah Pesanan Manual</h4>
               <div class="table-responsive">
                 <form action="{{ route('admin.manual-order.store') }}" method="POST" name="frm-billing">
                     @csrf
@@ -26,7 +26,7 @@
                         @enderror
                     </div> --}}
                     <div class="mb-3 mt-3">
-                        <label for="product_name" class="form-label">Product<span>*</span></label>
+                        <label for="product_name" class="form-label">Produk<span>*</span></label>
                         <select name="product_name" class="form-control">
                             <option value="" data-price="0.00">Pilih Produk</option>
                             @foreach ($products as $product)
@@ -38,63 +38,63 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="firstname" class="form-label">First Name<span>*</span></label>
-                        <input type="text" name="firstname" class="form-control" placeholder="Your name">
+                        <label for="firstname" class="form-label">Nama Depan<span>*</span></label>
+                        <input type="text" name="firstname" class="form-control" placeholder="Nama Depan Anda">
                         @error('firstname')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="lastname" class="form-label">Last Name<span>*</span></label>
-                        <input type="text" name="lastname" class="form-control" placeholder="Your last name">
+                        <label for="lastname" class="form-label">Nama Belakang<span>*</span></label>
+                        <input type="text" name="lastname" class="form-control" placeholder="Nama Belakang Anda">
                         @error('lastname')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="email" class="form-label">Email Address:</label>
-                        <input type="email" name="email" class="form-control" placeholder="Type your email">
+                        <label for="email" class="form-label">Email :</label>
+                        <input type="email" name="email" class="form-control" placeholder="Masukan Email Anda">
                         @error('email')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="phone" class="form-label">Phone number<span>*</span></label>
-                        <input type="number" name="phone" class="form-control" placeholder="10 digits format">
+                        <label for="phone" class="form-label">Nomor Telepon<span>*</span></label>
+                        <input type="number" name="phone" class="form-control" placeholder="Masukan Nomor Telepon 11 Angka">
                         @error('phone')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="address" class="form-label">Address:</label>
-                        <input type="text" name="address" class="form-control" placeholder="Street at apartment number">
+                        <label for="address" class="form-label">Alamat :</label>
+                        <input type="text" name="address" class="form-control" placeholder="Masukan Alamat Lengkap">
                         @error('address')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="country" class="form-label">Country<span>*</span></label>
-                        <input type="text" name="country" class="form-control" placeholder="Country">
+                        <label for="country" class="form-label">Negara<span>*</span></label>
+                        <input type="text" name="country" class="form-control" placeholder="Masukan Negara">
                         @error('country')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="zipcode" class="form-label">Postcode / ZIP:</label>
-                        <input type="number" name="zipcode" class="form-control" placeholder="Your postal code">
+                        <label for="zipcode" class="form-label">Kode Pos :</label>
+                        <input type="number" name="zipcode" class="form-control" placeholder="Kode Pos Anda">
                         @error('zipcode')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="city" class="form-label">Town / City<span>*</span></label>
-                        <input type="text" name="city" class="form-control" placeholder="City name">
+                        <label for="city" class="form-label">Kota<span>*</span></label>
+                        <input type="text" name="city" class="form-control" placeholder="Kota Anda">
                         @error('city')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="cartype" class="form-label">Car Type<span>*</span></label>
+                        <label for="cartype" class="form-label">Tipe Mobil<span>*</span></label>
                         <input type="text" name="cartype" class="form-control" placeholder="Car type">
                         @error('cartype')
                             <p class="text-danger">{{ $message }}</p>
@@ -122,7 +122,7 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="tax" class="form-label">Tax<span>*</span></label>
+                        <label for="tax" class="form-label">Pajak<span>*</span></label>
                         <input type="text" name="tax" id="tax" class="form-control" placeholder="tax" readonly>
                         @error('tax')
                             <p class="text-danger">{{ $message }}</p>
@@ -130,22 +130,12 @@
                     </div>
                     <div class="mb-3 mt-3" class="form-label">
                         <div class="summary-item payment-method">
-                            <h4 class="title-box">Payment Method</h4>
+                            <h4 class="title-box">Metode Pembayaran</h4>
                             <div class="choose-payment-methods">
                                 <label class="payment-method">
                                     <input name="payment-method" id="payment-method-cod" value="cod" type="radio">
                                     <span>Cash On Delivery</span>
-                                    <span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span>
-                                </label>
-                                <label class="payment-method">
-                                    <input name="payment-method" id="payment-method-visa" value="visa" type="radio">
-                                    <span>Visa</span>
-                                    <span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
-                                </label>
-                                <label class="payment-method">
-                                    <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
-                                    <span>Paypal</span>
-                                    <span class="payment-desc">You can pay with your credit card if you don't have a PayPal account</span>
+                                    <span class="payment-desc">Pembayaran ditempat 25% dari harga produk, beserta gratis pemasangan.</span>
                                 </label>
                             </div>
                         </div>

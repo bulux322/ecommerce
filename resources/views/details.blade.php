@@ -118,13 +118,13 @@
 
                                 <div class="label-section">
                                     <span class="badge badge-grey-color">#1 Best seller</span>
-                                    <span class="label-text">in fashion</span>
+                                    {{-- <span class="label-text">in fashion</span> --}}
                                 </div>
 
                                 <h3 class="price-detail">
                                     Rp.{{ number_format($product->regular_price, 0, ',', '.') }}
                                 </h3>
-                                <div class="color-image">
+                                {{-- <div class="color-image">
                                     <div class="image-select">
                                         <h5>Color :</h5>
                                         <ul class="image-section">
@@ -148,7 +148,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div id="selectSize" class="addeffect-section product-description border-product">
                                     <h6 class="product-title size-text">select size
@@ -161,16 +161,13 @@
                                     <div class="size-box">
                                         <ul>
                                             <li>
-                                                <a href="javascript:void(0)">s</a>
+                                                <a href="javascript:void(0)">S</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)">m</a>
+                                                <a href="javascript:void(0)">M</a>
                                             </li>
                                             <li>
-                                                <a href="javascript:void(0)">l</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">xl</a>
+                                                <a href="javascript:void(0)">L</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -198,14 +195,14 @@
                                 </div>
 
                                 <div class="product-buttons">
-                                    <a href="javascript:void(0)" class="btn btn-solid">
+                                    {{-- <a href="javascript:void(0)" class="btn btn-solid">
                                         <i class="fa fa-bookmark fz-16 me-2"></i>
                                         <span>Wishlist</span>
-                                    </a>
+                                    </a> --}}
                                     <a href="javascript:void(0)" onclick="event.preventDefault();document.getElementById('addToCart').submit();"
                                         id="cartEffect" class="btn btn-solid hover-solid btn-animation">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <span>Add To Cart</span>
+                                        <span>Pre Order</span>
                                         <form id="addToCart" method="post" action="{{route('cart.store')}}">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$product->id}}">
@@ -218,11 +215,11 @@
                                     <li>
                                         <img src="{{asset('assets/images/gif/truck.png')}}" class="img-fluid blur-up lazyload"
                                             alt="image">
-                                        <span class="lang">Free shipping for orders above $500 USD</span>
+                                        <span class="lang">Pengiriman Menggunakan Kargo</span>
                                     </li>
                                 </ul>
 
-                                <div class="mt-2 mt-md-3 border-product">
+                                {{-- <div class="mt-2 mt-md-3 border-product">
                                     <h6 class="product-title hurry-title d-block">
                                         @if ($product->stock_status == 'instock')
                                             inStock
@@ -250,7 +247,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="border-product">
                                     <h6 class="product-title d-block">share it</h6>

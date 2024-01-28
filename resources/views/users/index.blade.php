@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3>My Account</h3>
+                <h3>Akun</h3>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -27,7 +27,7 @@
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">My Account</li>
+                        <li class="breadcrumb-item active" aria-current="page">Akun Saya</li>
                     </ol>
                 </nav>
             </div>
@@ -42,13 +42,13 @@
                 <div class="account-sidebar">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">User Dashboard</h5>
+                            <h5 class="card-title">Dashboard</h5>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <a href="{{ route('user.index') }}">My Account</a>
+                                    <a href="{{ route('user.index') }}">Akun Saya</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('user.orders') }}">My Orders</a>
+                                    <a href="{{ route('user.orders') }}">Pesanan</a>
                                 </li>
                                 <!-- Tambahkan item lain sesuai kebutuhan -->
                             </ul>
@@ -60,24 +60,24 @@
                 <div class="account-sidebar">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title">My Order</p>
+                            <p class="card-title">Pesanan Saya</p>
                             <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>OrderId</th>
+                                            <th>Pesanan-Id</th>
                                             <th>Sub Total</th>
-                                            <th>Tax</th>
+                                            <th>Pajak</th>
                                             <th>Total</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Phone</th>
+                                            <th>Nama Depan</th>
+                                            <th>Nama Belakang</th>
+                                            <th>Telepon</th>
                                             <th>Email</th>
-                                            <th>Zipcode</th>
-                                            <th>Car Type</th>
-                                            <th>Order Date</th>
+                                            <th>Kode Pos</th>
+                                            <th>Tipe Mobil</th>
+                                            <th>Tanggal Pesanan</th>
                                             <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

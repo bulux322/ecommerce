@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('zipcode')->nullable();
             $table->string('city');
             $table->string('cartype');
-            $table->enum('status',['ordered','delivered','canceled'])->default('ordered');
+            $table->enum('status',['pending','terverifikasi','dibatalkan'])->default('pending');
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3>Post Detail</h3>
+                <h3>Artikel Lengkap</h3>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -33,7 +33,7 @@
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Post Detail</li>
+                        <li class="breadcrumb-item active" aria-current="page">Artikel Lengkap</li>
                     </ol>
                 </nav>
             </div>
@@ -165,83 +165,7 @@
                     </div>
                     <!-- Popular Post End -->
 
-                    <!-- Category section Start -->
-                    <div class="category-section popular-post mt-4">
-                        <div class="popular-title">
-                            <h3>Category</h3>
-                        </div>
-                        <ul>
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-globe text-color"></i>
-                                        </div>
 
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Global</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-building text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Business</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-play text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Entertainmant</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-tshirt text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Sports</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-dumbbell text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Health</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Category section End -->
                 </div>
             </div>
         </div>

@@ -140,7 +140,7 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
               <img src="{{asset('admins/images/faces/face5.jpg')}}" alt="profile"/>
-              <span class="nav-profile-name">Louis Barnett</span>
+              <span class="nav-profile-name">Admin</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -179,25 +179,25 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.categories')}}">
               <i class="mdi mdi-package menu-icon"></i>
-              <span class="menu-title">Kumpulan Kategori</span>
+              <span class="menu-title">Kumpulan Kategori Produk</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.orders')}}">
               <i class="mdi mdi-cart menu-icon"></i>
-              <span class="menu-title">Kumpulan Order</span>
+              <span class="menu-title">Kumpulan Pesanan</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.blogcategories.index')}}">
-              <i class="mdi mdi-cart menu-icon"></i>
-              <span class="menu-title">Blog Category</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              <span class="menu-title">Kategori Blog</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.blogposts.index')}}">
-              <i class="mdi mdi-cart menu-icon"></i>
-              <span class="menu-title">Blog Post</span>
+              <i class="mdi mdi-blogger menu-icon"></i>
+              <span class="menu-title">Kumpulan Konten</span>
             </a>
           </li>
         </ul>

@@ -12,18 +12,18 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Semua Blog Category</h4>
+                        <h4 class="card-title">Semua Blog Kategori</h4>
                         <p class="card-description">
-                            <a href="{{ route('admin.blogcategories.create') }}" class="btn btn-outline-primary me-2">Tambah Blog Category</a>
+                            <a href="{{ route('admin.blogcategories.create') }}" class="btn btn-outline-primary me-2">Tambah Blog Kategori</a>
                         </p>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Name</th>
+                                        <th>Nama Kategori</th>
                                         <th>Slug</th>
-                                        <th>Action</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,7 +34,7 @@
                                         <td>{{ $category->slug }}</td>
 
                                         <td>
-                                            <a href="{{ route('admin.blogcategories.edit', $category->id) }}" class="btn btn-outline-primary">Edit</a>
+                                            <a href="{{ route('admin.blogcategories.edit', $category->id) }}" class="btn btn-outline-primary">Ubah</a>
                                             <form action="{{ route('admin.blogcategories.destroy', $category->id) }}" method="POST" style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')

@@ -6,18 +6,19 @@
             <div class="col-md-12 stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <p class="card-title">Order Details</p>
+                        <p class="card-title">Rincian Pesanan</p>
                         <p class="card-description">
-                            <a href="{{route('admin.orders')}}" class="btn btn-outline-primary me-2">Back To Order</a>
+                            <a href="{{route('admin.orders')}}" class="btn btn-outline-primary me-2">Kembali</a>
                         </p>
+
                         <div class="table-responsive">
                             <table id="recent-purchases-listing" class="table">
                                 <thead>
                                     <tr>
-                                        <th>Product Gambar</th>
-                                        <th>Product Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
+                                        <th>Gambar Produk</th>
+                                        <th>Nama Produk</th>
+                                        <th>Harga</th>
+                                        <th>Jumlah</th>
                                         <th>Total</th>
                                     </tr>
                                 </thead>
@@ -37,7 +38,7 @@
                                 <tbody>
                                     <tr>
                                         <th>Subtotal</th>
-                                        <th>Tax</th>
+                                        <th>Pajak</th>
                                         <th>Total</th>
                                     </tr>
                                     <tr>
@@ -48,6 +49,20 @@
                                 </tbody>
                             </table>
                         </div>
+                        <!-- Form for updating order status -->
+                        <form action="{{ route('admin.updateOrderStatus', ['order_id' => $order->id]) }}" method="post">
+                            @csrf
+                            @method('patch')
+                            <div class="mb-3">
+                                <label for="new_status" class="form-label">Ubah Status Pesanan</label>
+                                <select name="new_status" class="form-control">
+                                    <option value="pending" {{ $order->status === 'pending' ? 'selected' : '' }}>Pending</option>
+                                    <option value="terverifikasi" {{ $order->status === 'terverifikasi' ? 'selected' : '' }}>Terverifikasi</option>
+                                    <option value="dibatalkan" {{ $order->status === 'dibatalkan' ? 'selected' : '' }}>Dibatalkan</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success">Perbarui Status</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -56,37 +71,37 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Billing Address</h4>
+                        <h4 class="card-title">Alamat Pengiriman</h4>
                         <div class="product-detail row">
                             <div class="col-md-12">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tr>
-                                            <th>First Name</th>
+                                            <th>Nama Depan</th>
                                             <td>{{$order->firstname}}</td>
-                                            <th>Last Name</th>
+                                            <th>Nama Belakang</th>
                                             <td>{{$order->lastname}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Phone</th>
+                                            <th>Telepon</th>
                                             <td>{{$order->phone}}</td>
                                             <th>Email</th>
                                             <td>{{$order->email}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Address</th>
+                                            <th>Alamat Lengkap</th>
                                             <td>{{$order->address}}</td>
                                             <th>Zipcode</th>
                                             <td>{{$order->zipcode}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Country</th>
+                                            <th>Negara</th>
                                             <td>{{$order->country}}</td>
                                             <th>City</th>
                                             <td>{{$order->city}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Cartype</th>
+                                            <th>Tipe Mobil</th>
                                             <td>{{$order->cartype}}</td>
                                         </tr>
                                     </table>

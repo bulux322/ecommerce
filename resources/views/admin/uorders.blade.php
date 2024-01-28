@@ -6,10 +6,10 @@
             <div class="col-md-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Recent Purchases</p>
+                  <p class="card-title">Kumpulan Pesanan</p>
                   <p class="card-description">
-                    <a href="{{route('admin.mcheckout.create')}}" class="btn btn-outline-primary me-2">Tambah Order</a>
-                    <a href="{{route('admin.exportOrders')}}" class="btn btn-outline-primary me-2">Export Order</a>
+                    <a href="{{route('admin.mcheckout.create')}}" class="btn btn-outline-primary me-2">Tambah Pesanan</a>
+                    <a href="{{route('admin.exportOrders')}}" class="btn btn-outline-primary me-2">Ekspor Pesanan</a>
                   </p>
                   <div class="table-responsive">
                     <div class="datatable-search">
@@ -18,19 +18,19 @@
                     <table id="recent-purchases-listing" class="table">
                       <thead>
                         <tr>
-                            <th>Order-Id</th>
+                            <th>Pesanan-Id</th>
                             <th>Sub Total</th>
-                            <th>Tax</th>
+                            <th>Pajak</th>
                             <th>Total</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Phone</th>
+                            <th>Nama Depan</th>
+                            <th>Nama Belakang</th>
+                            <th>Telepon</th>
                             <th>Email</th>
-                            <th>Zipcode</th>
-                            <th>Car Type</th>
-                            <th>Order Date</th>
+                            <th>Kode Pos</th>
+                            <th>Tipe Mobil</th>
+                            <th>Tanggal Pesanan</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -51,7 +51,7 @@
                             <td>{{$order->cartype}}</td>
                             <td>{{$order->created_at}}</td>
                             <td>{{$order->status}}</td>
-                            <td><a href="{{route('admin.orderdetails',['order_id'=>$order->id])}}" class="btn btn-outline-primary">Detail</a></td>
+                            <td><a href="{{route('admin.orderdetails',['order_id'=>$order->id])}}" class="btn btn-outline-primary">Rincian</a></td>
                         </tr>
                         @endforeach
                       </tbody>

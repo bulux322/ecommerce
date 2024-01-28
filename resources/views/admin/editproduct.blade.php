@@ -9,13 +9,13 @@
                 @if (Session::has('message'))
                     <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                 @endif
-              <h4 class="card-title">Edit Produk</h4>
+              <h4 class="card-title">Ubah Produk</h4>
               <div class="table-responsive">
                 <form method="POST" action="{{ route('admin.product.update', ['id' => $product->id]) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label">Nama Produk</label>
                         <input type="text" name="name" class="form-control" value="{{ $product->name }}">
                         @error('name')
                             <p class="text-danger">{{$message}}</p>
@@ -29,28 +29,28 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="short_description" class="form-label">Short Description</label>
+                        <label for="short_description" class="form-label">Deskripsi Singkat</label>
                         <input type="text" name="short_description" class="form-control" value="{{ $product->short_description }}">
                         @error('short_description')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="description" class="form-label">Description</label>
+                        <label for="description" class="form-label">Deskripsi</label>
                         <input type="text" name="description" class="form-control" value="{{ $product->description }}">
                         @error('description')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="regular_price" class="form-label">Regular Price</label>
+                        <label for="regular_price" class="form-label">Harga</label>
                         <input type="text" name="regular_price" class="form-control" value="{{ $product->regular_price }}">
                         @error('regular_price')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="sale_price" class="form-label">Sale Price</label>
+                        <label for="sale_price" class="form-label">Potongan Harga</label>
                         <input type="text" name="sale_price" class="form-control" value="{{ $product->sale_price }}">
                         @error('sale_price')
                             <p class="text-danger">{{$message}}</p>
@@ -64,7 +64,7 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="stock_status" class="form-label">Stock Status</label>
+                        <label for="stock_status" class="form-label">Status Stok</label>
                         <select class="form-control" name="stock_status">
                             <option value="instock">In Stock</option>
                             <option value="outofstock">Out of Stock</option>
@@ -84,7 +84,7 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="quantity" class="form-label">Quantity</label>
+                        <label for="quantity" class="form-label">Jumlah</label>
                         <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}"/>
                         @error('quantity')
                             <p class="text-danger">{{$message}}</p>
@@ -99,16 +99,16 @@
                     </div>
                     <!-- ... (lanjutkan dengan input lainnya) -->
                     <div class="mb-3 mt-3">
-                        <label for="image" class="form-label">Image</label>
+                        <label for="image" class="form-label">Gambar</label>
                         <input type="file" name="image" class="form-control"/>
                         @error('image')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="category_id" class="form-label">Category</label>
+                        <label for="category_id" class="form-label">Kategori</label>
                         <select class="form-control" name="category_id">
-                            <option value="">Select Category</option>
+                            <option value="">Pilih Kategori</option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}"
                                     @if($category->id == $product->category_id)
@@ -122,7 +122,7 @@
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-outline-primary">Update Category</button>
+                    <button type="submit" class="btn btn-outline-primary">Perbarui Kategori</button>
                     <a href="{{ route('admin.product') }}" class="btn btn-outline-secondary">Batal</a>
                 </form>
               </div>

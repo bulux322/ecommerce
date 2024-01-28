@@ -53,7 +53,7 @@
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Kirim</button>
                                 <a href="{{ route('admin.blogposts.index') }}" class="btn btn-secondary">Batal</a>
                             </form>
                         </div>

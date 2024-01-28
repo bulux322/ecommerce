@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3>Order</h3>
+                <h3>Pesanan</h3>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -27,7 +27,7 @@
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Order</li>
+                        <li class="breadcrumb-item active" aria-current="page">Pesanan</li>
                     </ol>
                 </nav>
             </div>
@@ -43,27 +43,27 @@
                     <div class="col-md-12 stretch-card">
                       <div class="card">
                         <div class="card-body">
-                          <p class="card-title">My Order</p>
+                          <p class="card-title">Pesanan Saya</p>
                           <p class="card-description">
-                            <a href="{{route('user.index')}}" class="btn btn-primary me-2">Back To Profile</a>
+                            <a href="{{route('user.index')}}" class="btn btn-primary me-2">Kembali</a>
                             </p>
                           <div class="table-responsive">
                             <table id="recent-purchases-listing" class="table">
                               <thead>
                                 <tr>
-                                    <th>OrderId</th>
+                                    <th>Pesanan-Id</th>
                                     <th>Sub Total</th>
-                                    <th>Tax</th>
+                                    <th>Pajak</th>
                                     <th>Total</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Phone</th>
+                                    <th>Nama Depan</th>
+                                    <th>Nama Belakang</th>
+                                    <th>Telepon</th>
                                     <th>Email</th>
-                                    <th>Zipcode</th>
-                                    <th>Car Type</th>
-                                    <th>Order Date</th>
+                                    <th>Kode Pos</th>
+                                    <th>Tipe Mobil</th>
+                                    <th>Tanggal Pesanan</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -84,7 +84,7 @@
                                     <td>{{$order->cartype}}</td>
                                     <td>{{$order->created_at}}</td>
                                     <td>{{$order->status}}</td>
-                                    <td><a href="{{route('user.orderdetails',['order_id'=>$order->id])}}" class="btn btn-primary">Detail</a></td>
+                                    <td><a href="{{route('user.orderdetails',['order_id'=>$order->id])}}" class="btn btn-primary">Rincian</a></td>
                                 </tr>
                                 @endforeach
                               </tbody>

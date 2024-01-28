@@ -45,6 +45,7 @@
                         <h4 class="card-title">Order Details</h4>
                         <p class="card-description">
                             <a href="{{route('user.index')}}" class="btn btn-primary me-2">Back To Profile</a>
+                            <a href="https://wa.me/08122300655" class="btn btn-primary me-2">Unggah Bukti Transaksi</a>
                         </p>
                         <div class="table-responsive">
                             <table class="table">

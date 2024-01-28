@@ -6,18 +6,18 @@
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Semua Category</h4>
+              <h4 class="card-title">Semua Kategori</h4>
               <p class="card-description">
-                <a href="{{route('admin.category.add')}}" class="btn btn-outline-primary me-2">Tambah Category</a>
+                <a href="{{route('admin.category.add')}}" class="btn btn-outline-primary me-2">Tambah Kategori</a>
               </p>
               <div class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Name</th>
+                      <th>Nama Kategori</th>
                       <th>Slug</th>
-                      <th>Action</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -30,7 +30,7 @@
                         <td>{{$category->name}}</td>
                         <td>{{$category->slug}}</td>
                         <td>
-                            <a href="{{ route('admin.categories.edit', ['id' => $category->id]) }}" class="btn btn-outline-primary">Edit</a>
+                            <a href="{{ route('admin.categories.edit', ['id' => $category->id]) }}" class="btn btn-outline-primary">Ubah</a>
                             <form action="{{ route('admin.categories.destroy', ['id' => $category->id]) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')

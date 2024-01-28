@@ -130,7 +130,6 @@
                                             </li>
                                             <li><a href="{{route('app.index')}}" class="nav-link menu-title">Home</a></li>
                                             <li><a href="{{route('shop.index')}}" class="nav-link menu-title">Shop</a></li>
-                                            {{-- <li><a href="{{route('cart.index')}}" class="nav-link menu-title">Cart</a></li> --}}
                                             <li><a href="{{route('about_us')}}" class="nav-link menu-title">About Us</a></li>
                                             <li><a href="{{route('contact')}}" class="nav-link menu-title">Contact Us</a>
                                             </li>
@@ -146,16 +145,6 @@
                                             <i data-feather="search"></i>
                                         </div>
                                     </li>
-                                    {{-- <li class="onhover-dropdown wislist-dropdown">
-                                        <div class="cart-media">
-                                            <a href="wishlist/list.html">
-                                                <i data-feather="heart"></i>
-                                                <span id="wishlist-count" class="label label-theme rounded-pill">
-                                                    0
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li> --}}
                                     <li class="onhover-dropdown wislist-dropdown">
                                         <div class="cart-media">
                                             <a href="{{route('cart.index')}}">
@@ -184,7 +173,7 @@
                                                             </li>
                                                         @endif
                                                             <li>
-                                                                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('frmlogout').submit();" class="d-block">logout</a>
+                                                                <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('frmlogout').submit();" class="d-block">Logout</a>
                                                                 <form id="frmlogout" action="{{route('logout')}}" method="POST">
                                                                     @csrf
                                                                 </form>
@@ -203,20 +192,21 @@
                                     </li>
                                 </ul>
                             </div>
+                            <!-- ... (sebelumnya HTML lainnya) ... -->
                             <div class="search-full">
-                                <form method="GET" class="search-full" action="http://localhost:8000/search">
+                                <form method="GET" class="search-full" action="{{ route('app.index') }}">
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i data-feather="search" class="font-light"></i>
                                         </span>
-                                        <input type="text" name="q" class="form-control search-type"
-                                            placeholder="Search here..">
-                                        <span class="input-group-text close-search">
+                                        <input type="text" name="q" class="form-control search-type" placeholder="Search here.." value="{{ request('q') }}">
+                                        <button type="submit" class="input-group-text close-search">
                                             <i data-feather="x" class="font-light"></i>
-                                        </span>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
+                            <!-- ... (sesudahnya HTML lainnya) ... -->
                         </div>
                     </div>
                 </div>
@@ -244,12 +234,6 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0)">
-                    <i data-feather="heart"></i>
-                    <span>Wishlist</span>
-                </a>
-            </li>
-            <li>
                 <a href="{{route('user.index')}}">
                     <i data-feather="user"></i>
                     <span>Account</span>
@@ -259,6 +243,23 @@
     </div>
 
     @yield('content')
+
+    @if(request()->has('q'))
+    <div class="container text-center">
+        <h2>Pencarian Untuk "{{ request('q') }}"</h2>
+
+        @if ($products->count() > 0)
+            <ul>
+                @foreach ($products as $product)
+                    <li>{{ $product->name }}</li>
+                    <!-- Sesuaikan dengan bagian tampilan produk yang ingin ditampilkan -->
+                @endforeach
+            </ul>
+        @else
+            <p>Pencarian Yang di Maksud Tidak Ada.</p>
+        @endif
+    </div>
+    @endif
 
     <div id="qvmodal"></div>
     <footer class="footer-sm-space mt-5">
@@ -275,7 +276,7 @@
                             </div>
                             <ul class="contact-lists" style="clear:both;">
                                 <li>
-                                    <span><b>phone:</b> <span class="font-light"> +62 81900000</span></span>
+                                    <span><b>phone:</b> <span class="font-light"> (+62) 8122-300-655</span></span>
                                 </li>
                                 <li>
                                     <span><b>Address:</b><span class="font-light"> Bandung,
@@ -298,7 +299,7 @@
                                         <a href="{{route('app.index')}}" class="font-dark">Home</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Shop</a>
+                                        <a href="{{route('shop.index')}}" class="font-dark">Shop</a>
                                     </li>
                                     <li>
                                         <a href="about-us.html" class="font-dark">About Us</a>
@@ -386,35 +387,6 @@
             <div class="container">
                 <div class="row gy-3">
                     <div class="col-md-6">
-                        <ul>
-                            <li class="font-dark">We accept:</li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/1.jpg')}}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/2.jpg')}}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/3.jpg')}}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{{asset('assets/images/payment-icon/4.jpg')}}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
                         <p class="mb-0 font-dark">© 2023, Rockrack Overland.</p>
                     </div>
                 </div>
@@ -449,7 +421,7 @@
         </div>
     </div>
 
-    <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
+    {{-- <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content ">
@@ -585,7 +557,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="tap-to-top">
         <a href="#home">
             <i class="fas fa-chevron-up"></i>
@@ -607,6 +579,7 @@
     <script src="{{asset('assets/js/bootstrap/bootstrap-notify.min.js')}}"></script>
     <script src="{{asset('assets/js/theme-setting.js')}}"></script>
     <script src="{{asset('assets/js/script.js')}}"></script>
+    <script src="{{asset('assets/js/script2.js')}}"></script>
 
     <script>
         $(function () {

@@ -15,14 +15,14 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Image</th>
-                            <th>Name</th>
+                            <th>Gambar</th>
+                            <th>Nama Produk</th>
                             <th>Stock</th>
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Date</th>
+                            <th>Harga</th>
+                            <th>Kategori</th>
+                            <th>Tanggal</th>
                             <th>SKU</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +42,7 @@
                             <td>{{ $product->created_at }}</td>
                             <td>{{ $product->SKU }}</td>
                             <td>
-                                <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}" class="btn btn-outline-primary">Edit</a>
+                                <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}" class="btn btn-outline-primary">Ubah</a>
                                 <form action="{{ route('admin.product.destroy', ['id' => $product->id]) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')

@@ -14,59 +14,59 @@
                 <form method="POST" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 mt-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter product name">
+                        <label for="name" class="form-label">Nama Produk</label>
+                        <input type="text" name="name" class="form-control" placeholder="Masukan Nama Produk">
                         @error('name')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="slug" class="form-label">Slug</label>
-                        <input type="text" name="slug" class="form-control" placeholder="Enter product slug">
+                        <input type="text" name="slug" class="form-control" placeholder="">
                         @error('slug')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="short_description" class="form-label">Short Description</label>
-                        <input type="text" name="short_description" class="form-control" placeholder="Enter product short_description">
+                        <label for="short_description" class="form-label">Deskripsi Singkat</label>
+                        <input type="text" name="short_description" class="form-control" placeholder="Masukan Deskripsi Singkat">
                         @error('short_description')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea name="description" class="form-control" id="description" placeholder="Enter product description"></textarea>
+                        <label for="description" class="form-label">Deskripsi</label>
+                        <textarea name="description" class="form-control" id="description" placeholder="Masukan Deskripsi"></textarea>
                         @error('description')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="regular_price" class="form-label">Regular Price</label>
-                        <input type="text" name="regular_price" class="form-control" placeholder="Enter regular price">
+                        <label for="regular_price" class="form-label">Harga</label>
+                        <input type="text" name="regular_price" class="form-control" placeholder="Masukan Harga">
                         @error('regular_price')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="sale_price" class="form-label">Sale Price</label>
-                        <input type="text" name="sale_price" class="form-control" placeholder="Enter sale price">
+                        <label for="sale_price" class="form-label">Potongan Harga</label>
+                        <input type="text" name="sale_price" class="form-control" placeholder="Masukan potongan harga">
                         @error('sale_price')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="sku" class="form-label">SKU</label>
-                        <input type="text" name="sku" class="form-control" placeholder="Enter SKU">
+                        <input type="text" name="sku" class="form-control" placeholder="Masukan SKU">
                         @error('sku')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="stock_status" class="form-label">Stock Status</label>
+                        <label for="stock_status" class="form-label">Status Stok</label>
                         <select class="form-control" name="stock_status">
-                            <option value="instock">In Stock</option>
-                            <option value="outofstock">Out of Stock</option>
+                            <option value="instock">Tersedia</option>
+                            <option value="outofstock">Tidak Tersedia</option>
                         </select>
                         @error('stock_status')
                             <p class="text-danger">{{$message}}</p>
@@ -83,23 +83,23 @@
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="quantity" class="form-label">Quantity</label>
-                        <input type="text" name="quantity" class="form-control" placeholder="Enter quantity"/>
+                        <label for="quantity" class="form-label">Jumlah</label>
+                        <input type="text" name="quantity" class="form-control" placeholder="Masukan Jumlah"/>
                         @error('quantity')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="image" class="form-label">Image</label>
+                        <label for="image" class="form-label">Gambar</label>
                         <input type="file" name="image" class="form-control"/>
                         @error('image')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3 mt-3">
-                        <label for="category_id" class="form-label">Category</label>
+                        <label for="category_id" class="form-label">Kategori</label>
                         <select class="form-control" name="category_id">
-                            <option value="">Select Category</option>
+                            <option value="">Pilih Kategori</option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
@@ -108,7 +108,7 @@
                             <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
                     <a href="{{ route('admin.product') }}" class="btn btn-secondary">Batal</a>
                 </form>
               </div>

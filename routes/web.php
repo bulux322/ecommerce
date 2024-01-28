@@ -44,6 +44,8 @@ Route::delete('/cart/clear',[CartController::class,'clearCart'])->name('cart.cle
 Route::get('/thank-you',[ThankyouController::class,'index'])->name('thankyou');
 Route::get('/blog-post',[BlogPostsController::class,'index'])->name('user.blogpost');
 Route::get('/blog-post/{slug}',[BlogPostsController::class,'postDetails'])->name('user.blogpost.details');
+Route::get('/search', [AppController::class,'search'])->name('product.search');
+
 
 Route::get('/checkout',[CheckoutController::class,'index'])->middleware('auth')->name('checkout.index');
 Route::get('/cart',[CartController::class,'index'])->middleware('auth')->name('cart.index');
@@ -88,6 +90,6 @@ Route::middleware('auth','auth.admin')->group(function(){
     Route::get('/admin/blog-post/{id}/edit', [AdminBlogPostController::class, 'edit'])->name('admin.blogposts.edit');
     Route::post('/admin/blog-post/store', [AdminBlogPostController::class, 'store'])->name('admin.blogposts.store');
     Route::put('/admin/blog-post/{id}', [AdminBlogPostController::class, 'update'])->name('admin.blogposts.update');
-
+    Route::patch('admin/update-order-status/{order_id}', [AdminOrderDetailsController::class, 'updateOrderStatus'])->name('admin.updateOrderStatus');
 
 });

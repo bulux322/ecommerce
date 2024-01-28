@@ -62,7 +62,7 @@
                             </a>
                             <div class="card-body">
                                 <h5>{{ $post->title }}</h5>
-                                <a href="{{ route('user.blogpost.details', $post->id) }}">
+                                <a href="{{ route('user.blogpost.details',['slug'=>$post->slug])}}">
                                     <h2 class="card-title">{{ $post->title }}</h2>
                                 </a>
                                 <div class="blog-profile">
@@ -156,7 +156,7 @@
                     <!-- Popular Post End -->
 
                     <!-- Category section Start -->
-                    <div class="category-section popular-post mt-4">
+                    {{-- <div class="category-section popular-post mt-4">
                         <div class="popular-title">
                             <h3>Category</h3>
                         </div>
@@ -230,7 +230,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                     <!-- Category section End -->
                 </div>
             </div>

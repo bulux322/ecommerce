@@ -49,67 +49,67 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
-                            <h3 class="box-title">Billing Address</h3>
+                            <h3 class="box-title">Alamat Pengiriman</h3>
                             <div class="billing-address">
                                 <p class="row-in-form">
-                                    <label for="firstname">first name<span>*</span></label>
-                                    <input type="text" name="firstname" placeholder="Your name">
+                                    <label for="firstname">Nama Depan<span>*</span></label>
+                                    <input type="text" name="firstname" placeholder="Nama Depan">
                                     @error('firstname')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="lastname">last name<span>*</span></label>
-                                    <input type="text" name="lastname" placeholder="Your last name">
+                                    <label for="lastname">Nama Belakang<span>*</span></label>
+                                    <input type="text" name="lastname" placeholder="Nama Belakang">
                                     @error('lastname')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="email">Email Addreess:</label>
-                                    <input type="email" name="email" placeholder="Type your email">
+                                    <label for="email">Email :</label>
+                                    <input type="email" name="email" placeholder="Masukan Email">
                                     @error('email')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="phone">Phone number<span>*</span></label>
-                                    <input type="number" name="phone" placeholder="10 digits format">
+                                    <label for="phone">Nomor Telepon<span>*</span></label>
+                                    <input type="number" name="phone" placeholder="11 angka">
                                     @error('phone')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="address">Address:</label>
-                                    <input type="text" name="address" placeholder="Street at apartment number">
+                                    <label for="address">Alamat :</label>
+                                    <input type="text" name="address" placeholder="Alamat Tujuan Lengkap">
                                     @error('address')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="country">Country<span>*</span></label>
-                                    <input type="text" name="country" placeholder="Country">
+                                    <label for="country">Negara<span>*</span></label>
+                                    <input type="text" name="country" placeholder="Masukan Negara">
                                     @error('country')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="zipcode">Postcode / ZIP:</label>
-                                    <input type="number" name="zipcode" placeholder="Your postal code">
+                                    <label for="zipcode">Kode Pos :</label>
+                                    <input type="number" name="zipcode" placeholder="Masukan Kode Pos">
                                     @error('zipcode')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="city">Town / City<span>*</span></label>
-                                    <input type="text" name="city" placeholder="City name">
+                                    <label for="city">Kota<span>*</span></label>
+                                    <input type="text" name="city" placeholder="Masukan Nama Kota">
                                     @error('city')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="cartype">Car Type<span>*</span></label>
-                                    <input type="text" name="cartype" placeholder="City name">
+                                    <label for="cartype">Tipe Mobil<span>*</span></label>
+                                    <input type="text" name="cartype" placeholder="Masukan Rincian Spesifikasi">
                                     @error('cartype')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -117,23 +117,18 @@
                             </div>
                         </div>
                         <div class="summary-item payment-method">
-                            <h4 class="title-box">Payment Method</h4>
+                            <h4 class="title-box">Metode Pembayaran</h4>
                             <div class="choose-payment-methods">
                                 <label class="payment-method">
                                     <input name="payment-method" id="payment-method-bank" value="cod" type="radio">
                                     <span>Cash On Delivery</span>
-                                    <span class="payment-desc">But the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</span>
+                                    <span class="payment-desc">Pembayaran ditempat dengan 25% dari harga produk, Beserta pemasangan gratis.</span>
                                 </label>
                                 <label class="payment-method">
                                     <input name="payment-method" id="payment-method-visa" value="visa" type="radio">
-                                    <span>visa</span>
-                                    <span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
-                                </label>
-                                <label class="payment-method">
-                                    <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
-                                    <span>Paypal</span>
-                                    <span class="payment-desc">You can pay with your credit</span>
-                                    <span class="payment-desc">card if you don't have a paypal account</span>
+                                    <span>Debit</span>
+                                    <span class="payment-desc">Pembayaran ditempat dengan 25% dari harga produk, Lalu lakukan unggah bukti pembayran pada Dashboard.</span>
+                                    <span class="payment-desc">BNI : 0756614807</span>
                                 </label>
                             </div>
                             <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">Rp.{{Cart::instance('cart')->total()}}</span></p>

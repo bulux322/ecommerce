@@ -7,7 +7,7 @@
           <div class="d-flex justify-content-between flex-wrap">
             <div class="d-flex align-items-end flex-wrap">
               <div class="me-md-3 me-xl-5">
-                <h2>Welcome back,</h2>
+                <h2>Selamat Datang,</h2>
                 <p class="mb-md-0">Your analytics dashboard template.</p>
               </div>
             </div>
@@ -224,17 +224,17 @@
                 <table id="recent-purchases-listing" class="table">
                   <thead>
                     <tr>
-                        <th>OrderId</th>
+                        <th>Id-Pesanan</th>
                         <th>Sub Total</th>
-                        <th>Tax</th>
+                        <th>Pajak</th>
                         <th>Total</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone</th>
+                        <th>Nama Depan</th>
+                        <th>Nama Belakang</th>
+                        <th>Telepon</th>
                         <th>Email</th>
-                        <th>Zipcode</th>
-                        <th>Car Type</th>
-                        <th>Order Date</th>
+                        <th>Kodepos</th>
+                        <th>Tiper Mobil</th>
+                        <th>Tanggal Pesanan</th>
                         <th>Status</th>
                     </tr>
                   </thead>

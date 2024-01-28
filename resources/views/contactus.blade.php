@@ -116,7 +116,7 @@
                             </div>
                             <div class="contact-title">
                                 <h4>Phone Number :</h4>
-                                <p>+62 0000000000</p>
+                                <p>(+62) 8122-300-655</p>
                             </div>
                         </div>
 

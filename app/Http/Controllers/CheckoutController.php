@@ -56,7 +56,7 @@ class CheckoutController extends Controller
         $order->subtotal = $subtotal;
         $order->tax = $tax;
         $order->total = $total;
-        $order->status = 'ordered';
+        $order->status = 'pending';
         $order->save();
 
         foreach (Cart::instance('cart')->content() as $item) {
